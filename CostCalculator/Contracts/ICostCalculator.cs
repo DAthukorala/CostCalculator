@@ -2,7 +2,7 @@
 
 namespace CostCalculator.Core.Contracts
 {
-    internal interface ICostCalculator
+    public interface ICostCalculator
     {
         decimal Calculate(Order order);
     }
