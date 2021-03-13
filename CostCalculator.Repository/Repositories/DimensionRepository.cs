@@ -9,6 +9,7 @@ namespace CostCalculator.Repository.Repositories
 {
     public class DimensionRepository : IReadOnlyRepository<Dimension>
     {
+        //hard coded table data, prefer to use a simple object mapper like dapper to map the raw data to Dimension model
         private readonly IQueryable<Dimension> _db = new List<Dimension> {
             new Dimension{Type= "small", MinSize=1, MaxSize=9 },
             new Dimension{Type= "medium", MinSize=10, MaxSize=49 },

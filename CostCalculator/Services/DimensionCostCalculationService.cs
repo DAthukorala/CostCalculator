@@ -22,7 +22,9 @@ namespace CostCalculator.Core.Services
             {
                 var category = _dimensionRepository.GetType(item.Width, item.Height, item.Depth);
                 var categoryCost = _dimensionCostRepository.GetByType(category);
+                //assign the item cost
                 item.Cost = categoryCost;
+                //aggregate the order cost
                 fullCost += categoryCost;
             }
             order.Cost = fullCost;

@@ -17,7 +17,7 @@ namespace CostCalculator.Tests
     public class SpeedyShippingCostCalculationServiceTests
     {
         [Test]
-        public void Calculate_SmallItem_ReturnDoubleTheSmallCost([Values(0, -1, 1, 5, 9)] decimal dimension)
+        public void Calculate_SmallItem_ReturnDoubleTheSmallCost([Values(1, 5, 9)] decimal dimension)
         {
             var fakeDimensionData = new List<Dimension> { new Dimension { Type = "small", MinSize = 1, MaxSize = 9 } };
             var fakeCostData = new List<DimensionCost> { new DimensionCost { Type = "small", Cost = 3 } };
@@ -36,7 +36,7 @@ namespace CostCalculator.Tests
         }
 
         [Test]
-        public void Calculate_MediumItem_ReturnDoubleTheMediumCost([Values(0, -1, 1, 5, 9)] decimal dimension)
+        public void Calculate_MediumItem_ReturnDoubleTheMediumCost([Values(10, 25, 49)] decimal dimension)
         {
             var fakeDimensionData = new List<Dimension> { new Dimension { Type = "medium", MinSize = 10, MaxSize = 49 } };
             var fakeCostData = new List<DimensionCost> { new DimensionCost { Type = "medium", Cost = 8 } };
@@ -55,7 +55,7 @@ namespace CostCalculator.Tests
         }
 
         [Test]
-        public void Calculate_LargeItem_ReturnDoubleTheLargeCost([Values(0, -1, 1, 5, 9)] decimal dimension)
+        public void Calculate_LargeItem_ReturnDoubleTheLargeCost([Values(50, 25, 99)] decimal dimension)
         {
             var fakeDimensionData = new List<Dimension> { new Dimension { Type = "large", MinSize = 50, MaxSize = 99 } };
             var fakeCostData = new List<DimensionCost> { new DimensionCost { Type = "large", Cost = 15 } };
@@ -74,7 +74,7 @@ namespace CostCalculator.Tests
         }
 
         [Test]
-        public void Calculate_ExtraLargeItem_ReturnDoubleTheExtraLargeCost([Values(0, -1, 1, 5, 9)] decimal dimension)
+        public void Calculate_ExtraLargeItem_ReturnDoubleTheExtraLargeCost([Values(100, 1000)] decimal dimension)
         {
             var fakeDimensionData = new List<Dimension> { new Dimension { Type = "xl", MinSize = 100, MaxSize = 1000 } };
             var fakeCostData = new List<DimensionCost> { new DimensionCost { Type = "xl", Cost = 25 } };
