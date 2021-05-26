@@ -44,5 +44,6 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"DAthukorala_CostCalculator" /o:"dathukorala" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build "./CostCalculator.Tests/CostCalculator.Tests.csproj"
-          packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe --result=NUnitResults.xml "CostCalculator.Tests\bin\Debug\netcoreapp3.1\CostCalculator.Tests.dll"
+          Import-Module packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe
+          packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe --result=NUnitResults.xml "CostCalculator.Tests\bin\Debug\CostCalculator.Tests.dll"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
