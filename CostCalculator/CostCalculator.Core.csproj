@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>CostCalculator.Core</AssemblyName>
+    <RootNamespace>CostCalculator.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CostCalculator.Repository\CostCalculator.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

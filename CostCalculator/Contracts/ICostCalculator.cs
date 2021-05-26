@@ -1,7 +1,9 @@
-﻿namespace CostCalculator.Contracts
+﻿using CostCalculator.Core.Models;
+
+namespace CostCalculator.Core.Contracts
 {
     public interface ICostCalculator
     {
-        decimal Calculate();
+        decimal Calculate(Order order);
     }
 }
